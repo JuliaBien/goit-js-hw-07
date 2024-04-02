@@ -16,6 +16,7 @@ for (const item of galleryItems) {
 }
 galleryList.addEventListener('click', showOryginalSize);
 const showOryginalSize = event => {
+  event.preventDefault();
   const instance = basicLightbox.create(`${event.target.getAttribute(
     'data-source'
   )}
