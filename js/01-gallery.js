@@ -14,14 +14,14 @@ for (const item of galleryItems) {
   </a>`;
   galleryList.append(listElement);
 }
-galleryList.addEventListener('click', showOryginalSize);
 const showOryginalSize = event => {
   event.preventDefault();
-  const instance = basicLightbox.create(`${event.target.getAttribute(
-    'data-source'
-  )}
-`);
+  const oryginalSize = event.target.dataset.source;
+  const instance = basicLightbox.create(
+    `<img src=${oryginalSize} width="800" height="600">)}`
+  );
 
   instance.show();
 };
 console.log(galleryItems);
+galleryList.addEventListener('click', showOryginalSize);
