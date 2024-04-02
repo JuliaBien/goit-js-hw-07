@@ -22,6 +22,12 @@ const showOryginalSize = event => {
   );
 
   instance.show();
+  const closeModal = event => {
+    if (event.key === 'Escape') {
+      instance.close();
+      document.removeEventListener('keydown', closeModal);
+    }
+  };
+  document.addEventListener('keydown', closeModal);
 };
-console.log(galleryItems);
 galleryList.addEventListener('click', showOryginalSize);
